@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "repro-behave"
+version = "0.1.0"
+description = "Small Behave project example"
+authors = ["Kevin <kevin@example.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+behave = "^1.2.6"
+pydantic = "^1.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

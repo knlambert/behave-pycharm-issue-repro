@@ -1,0 +1,16 @@
+--- behave_runner.py
++++ behave_runner.py
+@@ -257,14 +257,6 @@
+         # reimporting them raises "type X is already registered". Step decorators
+         # only live in pure-Python modules, so skipping extensions is safe.
+         new_modules = sys.modules.copy()
+-        for module in new_modules.keys():
+-            if module in old_modules:
+-                continue
+-            mod = sys.modules.get(module)
+-            path = getattr(mod, '__file__', None)
+-            if path and path.endswith(_EXT_SUFFIXES):
+-                continue
+-            del sys.modules[module]
+         features_to_run = self.__real_runner.features
+         self.__real_runner.clean()  # To make sure nothing left after dry run
